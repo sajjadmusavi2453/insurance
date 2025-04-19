@@ -48,7 +48,7 @@ const routes: AppRoute[] = [
     component: MainLayout,
     children: [
       {
-        path: "",
+        path: "main",
         name: "main",
         meta: {
           title: "main",
@@ -57,6 +57,32 @@ const routes: AppRoute[] = [
         components: {
           layout: () => import("../layouts/Dashboard.vue"),
           default: () => import("../views/pages/Main.vue"),
+          footer: BottomNavigation,
+        },
+      },
+      {
+        path: "manage",
+        name: "manage",
+        meta: {
+          title: "manage",
+          layout: "dashboard",
+        },
+        components: {
+          layout: () => import("../layouts/Dashboard.vue"),
+          default: () => import("../views/pages/app/Manage.vue"),
+          footer: BottomNavigation,
+        },
+      },
+      {
+        path: "profile",
+        name: "profile",
+        meta: {
+          title: "main",
+          layout: "dashboard",
+        },
+        components: {
+          layout: () => import("../layouts/Dashboard.vue"),
+          default: () => import("../views/pages/app/Profile.vue"),
           footer: BottomNavigation,
         },
       },

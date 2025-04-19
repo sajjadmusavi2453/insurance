@@ -2,9 +2,9 @@
 console.log("MAin layout");
 </script>
 <template>
-  <div>
+  <div class="bg-gray-50">
     <router-view name="header"> </router-view>
-    <main>
+    <main class="min-h-screen">
       <RouterView></RouterView>
     </main>
     <router-view name="footer"></router-view>
