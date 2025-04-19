@@ -1,8 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+console.log("MAin layout");
+</script>
 <template>
   <div>
-    <RouterView name="layout"> </RouterView>
-    <RouterView></RouterView>
-    <RouterView name="footer"></RouterView>
+    <router-view name="header"> </router-view>
+    <main>
+      <RouterView></RouterView>
+    </main>
+    <router-view name="footer"></router-view>
   </div>
 </template>

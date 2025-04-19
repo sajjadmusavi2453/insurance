@@ -1,8 +1,8 @@
-<script setup lang="ts">
-import BottomNavigation from "./components/layouts/BottomNavigation.vue";
-</script>
+<script setup lang="ts"></script>
 <template>
-  <BottomNavigation />
+  <RouterLink to="/auth/login">auth</RouterLink> | 
+  <RouterLink to="/app">app</RouterLink>
+  <router-view />
 </template>
 
 <style scoped></style>

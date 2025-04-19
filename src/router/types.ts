@@ -3,7 +3,7 @@ import type { RouteRecordRaw } from "vue-router";
 export interface AppRouteMeta {
   requireAuth?: boolean;
   title: string;
-  layout?: "main" | "auth";
+  layout?: "dashboard" | "auth";
 }
 
 export interface AppRoute extends Omit<RouteRecordRaw, "meta" | "components"> {
