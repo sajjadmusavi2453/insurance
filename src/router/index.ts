@@ -12,7 +12,7 @@ const routes: AppRoute[] = [
   {
     path: "/",
     name: "home",
-    redirect: { name: "login" },
+    redirect: { name: "signup" },
   },
   {
     path: "/auth",
