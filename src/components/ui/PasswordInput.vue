@@ -29,21 +29,26 @@ const haseTitle = computed(() => !!props.title);
 
 <template>
   <div class="relative w-full focus-within:text-teal-800 text-gray-400">
-    <input
-      :type="show ? 'text' : 'password'"
-      v-model="value"
-      :placeholder="placeholder"
-      :class="`w-full outline-none h-full rounded-lg bg-white pl-7 rtl:pr-7 transition-all py-2 ring-2 ring-gray-300 focus:ring-2 focus:ring-teal-600`"
-      @keypress.enter="$emit('onEnter')"
-    />
-    <component
-      :is="icon"
-      class="w-5 h-5 absolute left-1 rtl:right-1 top-1/2 -translate-y-1/2"
-    />
-    <component
-      :is="show ? EyeSlashIcon : EyeIcon"
-      @click="show = !show"
-      class="w-5 h-5 absolute left-2 top-1/2 -translate-y-1/2 cursor-pointer"
-    />
+    <p class="pb-2 font-bold">
+      {{ title }}
+    </p>
+    <div class="relative w-full">
+      <input
+        :type="show ? 'text' : 'password'"
+        v-model="value"
+        :placeholder="placeholder"
+        :class="`w-full outline-none h-full rounded-lg bg-white pl-8 rtl:pr-8 transition-all py-2 sm:py-3 ring-2 ring-gray-300 focus:ring-2 focus:ring-teal-600`"
+        @keypress.enter="$emit('onEnter')"
+      />
+      <component
+        :is="icon"
+        class="w-6 h-6 md:w-8 md:h-8 absolute left-1 rtl:right-1 top-1/2 -translate-y-1/2"
+      />
+      <component
+        :is="show ? EyeSlashIcon : EyeIcon"
+        @click="show = !show"
+        class="w-6 h-6 md:w-8 md:h-8 absolute left-2 top-1/2 -translate-y-1/2 cursor-pointer"
+      />
+    </div>
   </div>
 </template>

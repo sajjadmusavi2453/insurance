@@ -12,16 +12,18 @@ const a = ref("");
     <h1 class="text-2xl font-bold text-gray-800">
       ورود به <span class="text-teal-600 font-extrabold"> پنل کاربری </span>
     </h1>
-    <Input  :icon="UserIcon" />
-    <PasswordInput  :icon="LockClosedIcon" v-model="a" />
-    <Button block >
-        ورود به حساب
-    </Button>
-    <Button block tonal >
-        ورود به حساب
-    </Button>
-    <Button block text >
-        ورود به حساب
-    </Button>
+    <Input
+      title="نام کاربری"
+      :icon="UserIcon"
+      placeholder="نام کاربری خود را وارد کنید"
+    />
+    <PasswordInput
+      title="رمز عبور"
+      placeholder="رمز عبور را وارد کنید"
+      :icon="LockClosedIcon"
+    />
+    <Button block> ورود به حساب </Button>
+    <Button block tonal> ورود به حساب </Button>
+    <Button block text> ورود به حساب </Button>
   </div>
 </template>

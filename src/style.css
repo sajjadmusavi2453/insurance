@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "vazir";
+  src: url(./assets/fonts/IRANSansWeb.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "vazir-bold";
+  src: url(./assets/fonts/bold/Vazir-Bold.ttf);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "iran-sans";
+  src: url(./assets/fonts/IRANSansWeb.ttf);
+}
+
+@font-face {
+  font-family: "iran-sans-bold";
+  src: url(./assets/fonts/bold/IRANSansWeb.ttf);
+}
+@font-face {
+  font-family: "poppins";
+  src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: "poppins-bold";
+  src: url(./assets/fonts/bold/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "b-titr";
+  src: url(./assets/fonts/bold/BTitrBd.ttf);
+}
+
+
+@theme {
+    --default-font-family:"vazir";
+    --font-family-bold:"vazir-bold";
+}
