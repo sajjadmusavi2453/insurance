@@ -29,7 +29,7 @@ const haseTitle = computed(() => !!props.title);
 
 <template>
   <div class="relative w-full focus-within:text-teal-800 text-gray-400">
-    <p class="pb-2 font-bold">
+    <p class="pb-1 font-bold text-sm md:text-base">
       {{ title }}
     </p>
     <div class="relative w-full">
@@ -50,5 +50,8 @@ const haseTitle = computed(() => !!props.title);
         class="w-6 h-6 md:w-8 md:h-8 absolute left-2 top-1/2 -translate-y-1/2 cursor-pointer"
       />
     </div>
+    <small class="m-0 text-rose-500 font-bold text-xs md:text-sm"
+      >متن ارور</small
+    >
   </div>
 </template>

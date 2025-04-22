@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import Login from '../../../components/forms/Login.vue';
-
+import SignUp from "../../../components/forms/Signup.vue";
 </script>
 <template>
-  <div class="bg-teal-800 rounded-b-2xl h-64 overflow-hidden">
-    <img src="../../../assets/auth.svg" class="w-full h-full" alt="" />
+  <div class="bg-linear-to-r from-cyan-600 to-teal-600 rounded-b-2xl h-56 overflow-hidden flex justify-center items-center">
+    <h1 class="text-white font-bold text-4xl">
+      برنامه مدیریتی
+    </h1>
   </div>
-  <Login />
-  
+  <SignUp />
 </template>
+<style>
+
+</style>
