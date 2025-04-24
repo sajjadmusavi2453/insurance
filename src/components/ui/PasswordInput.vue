@@ -41,7 +41,7 @@ const touched = ref(false);
         :type="show ? 'text' : 'password'"
         v-model="value"
         :placeholder="placeholder"
-        :class="`w-full outline-none h-full rounded-lg bg-white pl-8 rtl:pr-8  md:pl-10 md:rtl:pr-10 transition-all py-2 sm:py-3 ring-2 ring-gray-300 focus:ring-2 focus:ring-teal-600  ${
+        :class="`w-full outline-none focus:bg-teal-50  h-full rounded-lg bg-white pl-8 rtl:pr-8  md:pl-10 md:rtl:pr-10 transition-all py-2 sm:py-3 ring-2 ring-gray-300 focus:ring-2 focus:ring-teal-600  ${
           error && touched ? '!ring-red-600 !bg-red-50 text-red-600' : ''
         }`"
         @keypress.enter="$emit('onEnter')"

@@ -2,7 +2,7 @@
 import {
   ArrowLeftEndOnRectangleIcon,
   LockClosedIcon,
-  UserIcon,
+  PhoneIcon,
   UserPlusIcon,
 } from "@heroicons/vue/20/solid";
 import Input from "../ui/Input.vue";
@@ -15,6 +15,8 @@ import { useValidation } from "../../composables/useValidation";
 import { ref, watch } from "vue";
 import { z } from "zod";
 import { useWatcher } from "../../composables/useWatchValidation";
+import { regexPatterns } from "../../scripts/regexPatterns";
+import { errorMessages } from "../../scripts/errorMessages";
 const { isLoading, setLoading, unsetLoading } = useButtonLoader();
 
 const router = useRouter();
@@ -23,12 +25,14 @@ const goToSignUp = () => {
 };
 
 const form = ref({
-  username: "",
+  phone: "",
   password: "",
 });
 const schema = z.object({
-  username: z.string().min(3),
-  password: z.string().min(8),
+  phone: z
+    .string()
+    .regex(regexPatterns.phone, { message: errorMessages.phone }),
+  password: z.string().min(6, { message: errorMessages.minLength(6) }),
 });
 const { errors, success, validData, validate } = useValidation(schema);
 
@@ -41,16 +45,16 @@ useWatcher(form, () => validate(form.value));
 </script>
 
 <template>
-  <div class="p-4 space-y-2">
+  <div class="p-4 space-y-4">
     <h1 class="text-2xl font-bold text-gray-800">
       ورود به <span class="text-teal-600 font-extrabold"> پنل کاربری </span>
     </h1>
     <Input
       title="نام کاربری"
-      :icon="UserIcon"
+      :icon="PhoneIcon"
       placeholder="نام کاربری خود را وارد کنید"
-      v-model="form.username"
-      :error="errors?.username?._errors[0]"
+      v-model="form.phone"
+      :error="errors?.phone?._errors[0]"
     />
     <PasswordInput
       title="رمز عبور"
@@ -60,6 +64,7 @@ useWatcher(form, () => validate(form.value));
       :error="errors?.password?._errors[0]"
     />
     <Button
+      class="mt-8 md:mt-16"
       block
       :icon="ArrowLeftEndOnRectangleIcon"
       :loading="isLoading"
