@@ -10,10 +10,10 @@ import Input from "../ui/Input.vue";
 import Button from "../ui/Button.vue";
 import PasswordInput from "../ui/PasswordInput.vue";
 import Divider from "../ui/Divider.vue";
-import { useLoader } from "../../composables/bottun-loader";
+import { useButtonLoader } from "../../composables/useButtonLoader";
 import { useRouter } from "vue-router";
 import { ref } from "vue";
-const { isLoading, setLoading, unsetLoading } = useLoader();
+const { isLoading, setLoading, unsetLoading } = useButtonLoader();
 
 const router = useRouter();
 

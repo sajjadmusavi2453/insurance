@@ -1,6 +1,6 @@
 import { ref } from "vue";
 
-export const useLoader = () => {
+export const useButtonLoader = () => {
   const isLoading = ref<boolean>(false);
   const setLoading = () => {
     isLoading.value = true;
